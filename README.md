@@ -22,7 +22,7 @@ It was inspired by data formats and metadata used in several other fields, inclu
 
 <h2> Contributing? </h2>
 
-Send Pull Request!! What header fields are missing? What other types of data
+Create a Pull Request!! What header fields are missing? What other types of data
 need to be stored? How can we better support the community working on
 computational methods for humanities data?
 
