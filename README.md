@@ -52,7 +52,7 @@ Simple display of JSONified object:
                         'title': 'The Experience of a Slave in South Carolina',
                         'volumes': ''},
  'tsvdro_ver': '1.0',
- 'workflow': {'created_by': 'tsdro_reference_implementation',
+ 'workflow': {'created_by': 'tsvdro_reference_implementation',
               'created_date': '2018-08-02 13:50',
               'created_system': 'parergon.local',
               'token_count': 21533,
