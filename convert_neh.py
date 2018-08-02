@@ -1,5 +1,5 @@
 #
-# conversion script to produce TSV-DRO (Data Rich Object) 
+# sample conversion script to produce TSV-DRO (Data Rich Object) 
 # for computational analysis in the humanities from
 # DocSouth North American Slave Narrative archive
 #

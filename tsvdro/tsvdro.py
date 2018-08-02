@@ -3,7 +3,7 @@
 #
 # Jed Dobson (james.e.dobson@dartmouth.edu)
 # Dartmouth College
-#
+# http://www.dartmouth.edu/~jed
 
 import numpy as np
 import platform

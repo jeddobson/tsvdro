@@ -15,10 +15,12 @@ Created by Jed Dobson (James.E.Dobson@Dartmouth.EDU) 08/02/2018
 to the commonly used tab-separated value data favored by many scholars working
 on computational methods in the humanities.
 
+It was inspired by data formats and metadata used in several other fields, including neuroimaging and the NIfT-T1 data format.
+
 
 - - - 
 
-<h2>Why do this??<h2>
+<h2>Why do this??</h2>
 
 - Capture critical bibliographic metadata
 
@@ -30,7 +32,7 @@ on computational methods in the humanities.
 
 - - - 
 
-<h2> Using TSVDRO <h2>
+<h2> Using TSVDRO </h2>
 
 Simple display of JSONified object:
 
@@ -58,4 +60,17 @@ Simple display of JSONified object:
 
 </pre>
 
-We can 
+We can easily directly access token counts:
+
+<pre>
+>>> dro_object['data']['cotton']
+34
+</pre>
+
+Files can be loaded, modified, and then saved:
+
+<pre>
+>>> dro_object['header']['workflow']['created_by'] = 'Jed Dobson'
+>>> tsvdro.save(dro_object,'na-slave-narratives-dro/fpn-jackson-jackson.dro')
+</pre>
+
