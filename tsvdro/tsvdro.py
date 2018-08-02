@@ -21,7 +21,7 @@ def build_header():
    # build workflow section
    header['workflow'] = dict()
    header['workflow']['created_date'] = time.strftime("%Y-%m-%d %H:%M")
-   header['workflow']['created_by'] = "tsdro_reference_implementation"
+   header['workflow']['created_by'] = "tsvdro_reference_implementation"
    header['workflow']['created_system'] = platform.node()
    header['workflow']['vocab_count'] = ""
    header['workflow']['token_count'] = ""
