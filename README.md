@@ -15,7 +15,7 @@ Created by Jed Dobson (James.E.Dobson@Dartmouth.EDU) 08/02/2018
 to the commonly used tab-separated value data favored by many scholars working
 on computational methods in the humanities.
 
-It was inspired by data formats and metadata used in several other fields, including neuroimaging and the NIfT-T1 data format.
+It was inspired by data formats and metadata used in several other fields, including neuroimaging and the [NIfT-T1] (https://nifti.nimh.nih.gov/pub/dist/src/niftilib/nifti1.h) data format.
 
 
 - - - 
