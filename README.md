@@ -83,3 +83,14 @@ Files can be loaded, modified, and then saved:
 >>> tsvdro.save(dro_object,'na-slave-narratives-dro/fpn-jackson-jackson.dro')
 </pre>
 
+
+Already have TSV files and want to convert them? It's trivial--the script will create a header, convert your TSV data to a dictionary and wrap the whole thing up in JSON.
+
+<pre>
+>>> import tsvdro
+>>> dro_object = tsvdro.load('existing-data-file.tsv')
+Not in DRO format: converting
+>>> dro_object['header']
+{'bibliographic_data': {'publisher_location': '', 'file_uri': '', 'publisher': '', 'author_name': '', 'volumes': '', 'publication_date': '', 'pages': '', 'title': ''}, 'tsvdro_ver': '1.0', 'workflow': {'vocab_count': '', 'created_by': 'tsdro_reference_implementation', 'token_count': '', 'created_system': 'parergon.local', 'created_date': '2018-08-02 14:24'}}
+>>> tsvdro.save('dro_object','updated-data-file.dro')
+</pre>
