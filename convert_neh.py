@@ -1,5 +1,5 @@
 #
-# sample conversion script to produce TSV-DRO (Data Rich Object) 
+# conversion script to produce TSV-DRO (Data Rich Object) 
 # for computational analysis in the humanities from
 # DocSouth North American Slave Narrative archive
 #
@@ -89,13 +89,13 @@ with open(neh_toc, 'rt') as csvfile:
    for row in reader:
         # deal with the header
         if row_count != 0:
-            print(row)
 
+            print('processing:',row[0])
             file = docsouth_root + "texts/" + row[0].replace(".xml",".txt")
             tsvdro_object = dict()
             tsvdro_object['header'] = tsvdro.build_header()
             tsvdro_object['header']['bibliographic_data']['file_uri'] = row[5]
-            tsvdro_object['header']['bibliographic_data']['author'] = row[1]
+            tsvdro_object['header']['bibliographic_data']['author_name'] = row[1]
             tsvdro_object['header']['bibliographic_data']['title'] = row[2]
 
             # try to convert date to an integer (year)
@@ -105,7 +105,7 @@ with open(neh_toc, 'rt') as csvfile:
                 year=False
                 pass
 
-            tsvdro_object['header']['bibliographic_data']['publication_year'] = year
+            tsvdro_object['header']['bibliographic_data']['publication_date'] = year
 
             # produce TSV token count
             raw_text = open(file,encoding="utf-8").read()
