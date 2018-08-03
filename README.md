@@ -102,3 +102,7 @@ Not in DRO format: converting
 {'bibliographic_data': {'publisher_location': '', 'file_uri': '', 'publisher': '', 'author_name': '', 'volumes': '', 'publication_date': '', 'pages': '', 'title': ''}, 'tsvdro_ver': '1.0', 'workflow': {'vocab_count': '', 'created_by': 'tsdro_reference_implementation', 'token_count': '', 'created_system': 'parergon.local', 'created_date': '2018-08-02 14:24'}}
 >>> tsvdro.save('dro_object','updated-data-file.dro')
 </pre>
+
+<h2> Example: Calculating Distance Between Texts</h2>
+
+
