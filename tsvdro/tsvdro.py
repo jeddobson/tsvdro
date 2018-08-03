@@ -1,5 +1,5 @@
-#
 # tsvdro: reference implementation for data rich tab separated value objects
+#         reads and writes DRO objects stored as JSON data
 #
 # Jed Dobson (james.e.dobson@dartmouth.edu)
 # Dartmouth College
@@ -21,6 +21,7 @@ def build_header():
    # build workflow section
    header['workflow'] = dict()
    header['workflow']['created_date'] = time.strftime("%Y-%m-%d %H:%M")
+   header['workflow']['last_updated'] = time.strftime("%Y-%m-%d %H:%M")
    header['workflow']['created_by'] = "tsvdro_reference_implementation"
    header['workflow']['created_system'] = platform.node()
    header['workflow']['vocab_count'] = ""
@@ -102,6 +103,10 @@ def save(object,filename):
    ''' Saves DRO object with the supplied filename
    '''
 
+   # modify with 'last_updated' timestamp
+   object['header']['workflow']['last_updated'] = time.strftime("%Y-%m-%d %H:%M")
+
    with open(filename, "w") as f:
       json.dump(object, f)
    return
+
