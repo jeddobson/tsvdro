@@ -17,7 +17,11 @@ Data-Rich Literary History." _Modern Language Quarterly_ 78.1 (2017)) and
 attached to the commonly used tab-separated value data favored by many scholars
 working on computational methods in the humanities.
 
-It was inspired by data formats and metadata used in several other fields, including neuroimaging and the [NIfT-T1] (https://nifti.nimh.nih.gov/pub/dist/src/niftilib/nifti1.h) data format.
+It was inspired by data formats and metadata used in several other fields,
+including neuroimaging and the [NIfT-T1]
+(https://nifti.nimh.nih.gov/pub/dist/src/niftilib/nifti1.h) data format.
+
+Several discussions on Twitter have also contributed to the design.
 
 
 - - - 
@@ -86,7 +90,9 @@ Files can be loaded, modified, and then saved:
 </pre>
 
 
-Already have TSV files and want to convert them? It's trivial--the script will create a header, convert your TSV data to a dictionary and wrap the whole thing up in JSON.
+Already have TSV files and want to convert them? It's trivial--the script will
+create a header, convert your TSV data to a dictionary, and wrap the whole
+thing up in JSON.
 
 <pre>
 >>> import tsvdro
