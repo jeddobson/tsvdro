@@ -118,5 +118,5 @@ def unpack_text(input_object):
    return(' '.join([item for list in expanded_doc for item in list]))
 </pre>
 
-This [Jupyter notebook] (https://github.com/jeddobson/tsvdro/blob/master/vector-distance-matrix-using-tsvdro.ipynb) demonstrates the above method.
+This [Jupyter notebook](https://github.com/jeddobson/tsvdro/blob/master/vector-distance-matrix-using-tsvdro.ipynb) demonstrates the above method.
 
