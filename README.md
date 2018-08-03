@@ -105,4 +105,19 @@ Not in DRO format: converting
 
 <h2> Example: Calculating Distance Between Texts</h2>
 
+Storing CountVectorizer objects (for example, as pickled objects) isn't as
+portable as raw token counts. You can easily vectorize the stored values from a
+TSV file by converting the list of tokens to a single string and including all
+repetitions of included words and then supplying these strings to the
+vectorizer.
+
+<pre>
+def unpack_text(input_object):
+   expanded_doc = list()
+   for key in input_object['data']:
+      expanded_doc.append([key] * input_object['data'][key])
+   return(' '.join([item for list in expanded_doc for item in list]))
+</pre>
+
+This [Jupyter notebook] (https://github.com/jeddobson/tsvdro/blob/master/vector-distance-matrix-using-tsvdro.ipynb) demonstrates the above method.
 
