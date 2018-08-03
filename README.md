@@ -18,8 +18,7 @@ attached to the commonly used tab-separated value data favored by many scholars
 working on computational methods in the humanities.
 
 It was inspired by data formats and metadata used in several other fields,
-including neuroimaging and the [NIfT-T1]
-(https://nifti.nimh.nih.gov/pub/dist/src/niftilib/nifti1.h) data format.
+including neuroimaging and the [NIfT-T1](https://nifti.nimh.nih.gov/pub/dist/src/niftilib/nifti1.h) data format.
 
 Several discussions on Twitter have also contributed to the design.
 
