@@ -1,9 +1,14 @@
+#
 # tsvdro: reference implementation for data rich tab separated value objects
 #         reads and writes DRO objects stored as JSON data
 #
 # Jed Dobson (james.e.dobson@dartmouth.edu)
 # Dartmouth College
 # http://www.dartmouth.edu/~jed
+#
+#
+# implements tsvdr_ver 1.0
+#
 
 import numpy as np
 import platform
@@ -13,6 +18,7 @@ import json
 
 # build the basic header
 def build_header():
+   ''' Build the basic DRO object header '''
    header = dict()
 
    # version number is a string
@@ -24,6 +30,14 @@ def build_header():
    header['workflow']['last_updated'] = time.strftime("%Y-%m-%d %H:%M")
    header['workflow']['created_by'] = "tsvdro_reference_implementation"
    header['workflow']['created_system'] = platform.node()
+
+   # data_type: allow different types and formats of data to be stored
+   # 1: TSV 
+   # 2: Windowed TSV
+   header['workflow']['data_type'] = 1
+
+   # include total count of tokens in documents (store prior to preprocessing)
+   # and unique tokens (vocab_count)
    header['workflow']['vocab_count'] = ""
    header['workflow']['token_count'] = ""
 
@@ -85,7 +99,6 @@ def load(filename):
               # and only if we have two colums of data
               if len(row) == 2:
                   tsv_data[row[0]] = row[1]
-              #tsv_data.append(row)
 
        tsvdro_object['data'] = tsv_data
 
@@ -99,14 +112,35 @@ def load(filename):
    tsvdro_object = file_object
    return(tsvdro_object)
 
-def save(object,filename):
+
+#
+# function to verify that we actually have a DRO object
+# 
+
+def verify(dro_object):
+   ''' Verify the integrity of the DRO object '''
+
+   # what is the object?
+   if type(dro_object) == dict:
+      try:
+        len(dro_object['header']['tsvdro_ver'])
+        return True
+      except KeyError:
+        return False
+   else:
+       return False
+
+def save(dro_object,filename):
    ''' Saves DRO object with the supplied filename
    '''
+   # first verify that this is a good DRO object
+   if verify(dro_object):
+     # modify with 'last_updated' timestamp
+     dro_object['header']['workflow']['last_updated'] = time.strftime("%Y-%m-%d %H:%M")
+     with open(filename, "w") as f:
+        json.dump(dro_object, f)
+     return
 
-   # modify with 'last_updated' timestamp
-   object['header']['workflow']['last_updated'] = time.strftime("%Y-%m-%d %H:%M")
-
-   with open(filename, "w") as f:
-      json.dump(object, f)
-   return
+   else:
+    print("ERROR: invalid DRO object")
 
