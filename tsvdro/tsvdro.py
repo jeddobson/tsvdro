@@ -35,22 +35,23 @@ def build_header():
    # 1: TSV 
    # 2: Windowed TSV
    header['workflow']['data_type'] = 1
+   header['workflow']['data_option'] = None
 
    # include total count of tokens in documents (store prior to preprocessing)
    # and unique tokens (vocab_count)
-   header['workflow']['vocab_count'] = ""
-   header['workflow']['token_count'] = ""
+   header['workflow']['vocab_count'] = None
+   header['workflow']['token_count'] = None
 
    # build bibliographic section
    header['bibliographic_data'] = dict()
-   header['bibliographic_data']['author_name'] = ""
-   header['bibliographic_data']['title'] = ""
-   header['bibliographic_data']['volumes'] = ""
-   header['bibliographic_data']['pages'] = ""
-   header['bibliographic_data']['publication_date'] = ""
-   header['bibliographic_data']['publisher'] = ""
-   header['bibliographic_data']['publisher_location'] = ""
-   header['bibliographic_data']['file_uri'] = ""
+   header['bibliographic_data']['author_name'] = None
+   header['bibliographic_data']['title'] = None
+   header['bibliographic_data']['volumes'] = None
+   header['bibliographic_data']['pages'] = None
+   header['bibliographic_data']['publication_date'] = None
+   header['bibliographic_data']['publisher'] = None
+   header['bibliographic_data']['publisher_location'] = None
+   header['bibliographic_data']['file_uri'] = None
 
    return(header)
 
