@@ -33,7 +33,7 @@ def build_header():
 
    # data_type: allow different types and formats of data to be stored
    # 1: TSV 
-   # 2: Windowed TSV
+   # 2: Segmented TSV
    header['workflow']['data_type'] = 1
    header['workflow']['data_option'] = None
 
@@ -111,6 +111,10 @@ def load(filename):
 
    # read the JSON object and return
    tsvdro_object = file_object
+
+   # verify object
+   if verify(tsvdro_object) == False:
+      print("ERROR: Data potentially corrupted")
    return(tsvdro_object)
 
 
