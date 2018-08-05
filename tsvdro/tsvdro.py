@@ -23,7 +23,7 @@ def build_header():
    ''' Build the basic DRO object header '''
    header = dict()
 
-   # version number is a string
+   # version number is a string (not version of module, but the format version)
    header['tsvdro_ver']  = "1.0"
 
    # build workflow section
