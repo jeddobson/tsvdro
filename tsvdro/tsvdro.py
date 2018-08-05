@@ -16,6 +16,8 @@ import sys, os
 import time
 import json
 
+__version__ = '1.0.1'
+
 # build the basic header
 def build_header():
    ''' Build the basic DRO object header '''
