@@ -14,7 +14,8 @@ import csv
 import nltk
 import os
 
-docsouth_root = "na-slave-narratives/data/"
+docsouth_root = "../../na-slave-narratives/data/"
+output_dir = "na-slave-narratives/"
 neh_toc = docsouth_root + "toc.csv"
 
 def preprocess(text_object, options = "default"):
@@ -80,7 +81,6 @@ def preprocess(text_object, options = "default"):
 
 
 # create output directory
-output_dir = 'na-slave-narratives-dro/'
 os.mkdir(output_dir)
 
 row_count=0
