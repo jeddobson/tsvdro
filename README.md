@@ -51,7 +51,7 @@ computational methods for humanities data?
 Simple display of JSONified object:
 
 <pre>
->>> import tsvdro
+>>> from tsvdro import tsvdro
 >>> import pprint
 >>> dro_object = tsvdro.load('na-slave-narratives-dro/fpn-jackson-jackson.dro')
 >>> pprint.pprint(dro_object['header'])
@@ -94,7 +94,7 @@ create a header, convert your TSV data to a dictionary, and wrap the whole
 thing up in JSON.
 
 <pre>
->>> import tsvdro
+>>> from tsvdro import tsvdro
 >>> dro_object = tsvdro.load('existing-data-file.tsv')
 Not in DRO format: converting
 >>> dro_object['header']
