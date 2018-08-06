@@ -9,7 +9,7 @@
 #
 
 # load module
-import tsvdro
+from tsvdro import tsvdro
 import csv
 import nltk
 import os
