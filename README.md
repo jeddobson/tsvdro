@@ -34,15 +34,15 @@ computational methods for humanities data?
 
 - - - 
 
-<h2>Why do this??</h2>
+<h2>Why use this??</h2>
 
-- Capture critical bibliographic metadata
+- Capture and share critical bibliographic metadata.
 
-- Record workflow information (what produced this file? when was it produced?) necessary for reproduction
+- Record workflow information (what produced this file? when was it produced?) necessary for reproduction and replication.
 
-- Store data and metadata together in a single, platform-agnostic format (JSON)
+- Store data and metadata together in a single, platform-agnostic format (JSON).
 
-- Provide a standard interface for loading and saving data for computational applications
+- Provide a standard interface for loading and saving data for computational applications.
 
 - - - 
 
