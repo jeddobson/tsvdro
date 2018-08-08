@@ -171,7 +171,7 @@ def cv2dro(vectorized_object,vectorizer):
     
     # create a header
     tsvdro_object = dict()
-    tsvdro_object['header'] = tsvdro.build_header()
+    tsvdro_object['header'] = build_header()
     
     # explain where we found this object
     tsvdro_object['header']['workflow']['created_by'] = "cv2dro"
