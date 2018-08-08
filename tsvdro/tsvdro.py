@@ -152,3 +152,39 @@ def save(dro_object,filename):
    else:
     print("ERROR: invalid DRO object")
 
+def cv2dro(vectorized_object,vectorizer):
+    ''' The cv2dro turns the output of CountVectorize text into a DRO object
+    '''
+
+    # make sure CountVectorizer is available
+    from sklearn.feature_extraction.text import CountVectorizer
+
+    if vectorized_object.ndim > 2:
+        print("only a single dimension (single text or document) object supported")
+        return
+    
+    # obtain vocabulary
+    vocab = vectorizer.get_feature_names()
+    
+    # order by the object's index (the vocabulary)
+    vectorized_object.sort_indices()
+    
+    # create a header
+    tsvdro_object = dict()
+    tsvdro_object['header'] = tsvdro.build_header()
+    
+    # explain where we found this object
+    tsvdro_object['header']['workflow']['created_by'] = "cv2dro"
+
+    # we do have this information
+    tsvdro_object['header']['workflow']['vocab_count'] = len(vocab)
+    
+    # create data section
+    tsvdro_object['data'] = dict()
+    
+    for i, value in enumerate(vectorized_object.toarray()[0]):
+        token = vocab[i]
+        tsvdro_object['data'][token] = value
+    
+    return tsvdro_object
+
