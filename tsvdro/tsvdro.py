@@ -7,7 +7,7 @@
 # http://www.dartmouth.edu/~jed
 #
 #
-# implements tsvdr_ver 1.0
+# implements tsvdro_ver 1.0
 #
 
 import numpy as np
