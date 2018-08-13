@@ -1,0 +1,32 @@
+#!/usr/bin/env python
+#
+# command-line tool for reading TSVDRO files
+#
+# Jed Dobson (James.E.Dobson@Dartmouth.EDU)
+#
+
+import sys  
+import argparse
+from tsvdro import tsvdro
+
+parser = argparse.ArgumentParser(
+                description='tsvdro:command-line tool for reading TSVDRO files.\
+                contact: James.E.Dobson@Dartmouth.EDU')
+
+parser.add_argument('filename',help="filename of input file")
+args = parser.parse_args()
+
+filename = args.filename
+
+dro_object = tsvdro.load(filename)
+
+# parse the header
+header = dro_object['header']
+
+# display version number
+print('{0:20s}: {1}'.format('tsvdro_ver',header['tsvdro_ver']))
+
+# display the remainder of the header
+for field in ['workflow','bibliographic_data']:
+  for k in header[field]: 
+    print('{0:20s}: {1}'.format(k,header[field][k]))
