@@ -120,3 +120,28 @@ def unpack_text(input_object):
 
 This [Jupyter notebook](https://github.com/jeddobson/tsvdro/blob/master/sample/vector-distance-matrix-using-tsvdro.ipynb) demonstrates the above method.
 
+
+---
+
+Bundled simple command-line utility dumps header of 'DRO' files:
+
+<pre>
+[jed@dexter bin] > ./tsvdro  ../sample/na-slave-narratives/neh-norris-norris.dro 
+tsvdro_ver          : 1.0
+created_date        : 2018-08-06 12:21
+data_option         : None
+token_count         : 42211
+created_system      : parergon.local
+last_updated        : 2018-08-06 12:21
+data_type           : 1
+vocab_count         : 5393
+created_by          : tsvdro_reference_implementation
+publisher           : None
+publication_date    : 1789
+author_name         : Robert  Norris
+file_uri            : http://docsouth.unc.edu/full-text/na-slave-narratives/data/texts/neh-norris-norris.txt
+publisher_location  : None
+pages               : None
+volumes             : None
+title               : Memoirs of the Reign of Bossa Ahadee, King of Dahomy, an Inland Country of Guiney. To Which Are Added, the Author's Journey to Abomey, the Capital; and a Short Account of the African Slave Trade
+</pre>
