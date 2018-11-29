@@ -183,6 +183,9 @@ def cv2dro(vectorized_object,vectorizer):
     tsvdro_object['data'] = dict()
     
     for i, value in enumerate(vectorized_object.toarray()[0]):
+        # entry in table indicates single appearance, so add '1' to value
+        value+= 1 
+
         token = vocab[i]
         tsvdro_object['data'][token] = value
     
