@@ -97,7 +97,7 @@ def load(filename):
        tsv_data = dict()
        with open(filename) as input:
 
-           input = csv.reader(input, delimiter='\t')
+           input = csv.reader(input, delimiter='\t',quoting=csv.QUOTE_NONE)
            for row in input:
               # add data as dict
               # and only if we have two colums of data
